@@ -6,17 +6,9 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-lg-6">
-      <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
-        Tambah Data Siswa
-      </button>
-    </div>
-  </div>
-
   <div class="row mt-3">
     <div class="col-lg-6">
-      <form action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
+      <form action="<?= BASEURL; ?>/kelas/cari" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Cari Mahasiswa" id="keyword" name="keyword" autocomplete="off">
           <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
@@ -26,18 +18,14 @@
   </div>
 
 
-  <h3 class="mt-3">Daftar Mahasiswa</h3>
+  <h3 class="mt-3">Daftar Kelas</h3>
   <div class="row">
     <div class="col mx-auto">
-      <?php foreach ($data['siswa'] as $siswa) : ?>
+      <?php foreach ($data['kelas'] as $siswa) : ?>
         <ul class="list-group ">
-          <li class="list-group-item"><?= $siswa['nama'] ?>
-            <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $siswa['id']; ?>" class="badge bg-danger text-bg-primary float-end m-lg-1" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+          <li class="list-group-item"><?= $siswa['kelas'] ?>
 
-            <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $siswa['id']; ?>" class="badge bg-warning text-bg-primary float-end m-lg-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $siswa['id']; ?>">Ubah</a>
-
-
-            <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $siswa['id']; ?>" class="badge text-bg-primary float-end m-lg-1">Details</a>
+            <a href="<?= BASEURL; ?>/kelas/detail/<?= $siswa['id']; ?>" class="badge text-bg-primary float-end m-lg-1">Details</a>
           </li>
 
         </ul>
@@ -54,7 +42,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+        <form action="<?= BASEURL; ?>/kelas/tambah" method="post">
           <input type="hidden" name="id" id="id">
           <div class="form-group">
             <label for="nama">Nama</label>

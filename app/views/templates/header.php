@@ -17,6 +17,10 @@
       height: 250px;
       object-fit: cover;
     }
+    
+    a{
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -37,6 +41,15 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= BASEURL; ?>/mahasiswa">Siswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL; ?>/jurusan">Jurusan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL; ?>/kelas">Kelas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= BASEURL; ?>/guru">Guru</a>
         </li>
       </ul>
     </div>
