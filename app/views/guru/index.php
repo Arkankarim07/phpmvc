@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+      <button type="button" class="btn btn-primary tombolTambahDataGuru" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah Data Guru
       </button>
     </div>
@@ -34,7 +34,7 @@
           <li class="list-group-item"><?= $guru['guru'] ?>
             <a href="<?= BASEURL; ?>/guru/hapus/<?= $guru['id']; ?>" class="badge bg-danger text-bg-primary float-end m-lg-1" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
 
-
+            <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $guru['id']; ?>" class="badge bg-warning text-bg-primary float-end m-lg-1 tampilModalUbahGuru" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $guru['id']; ?>">Ubah</a>
 
             <a href="<?= BASEURL; ?>/guru/detail/<?= $guru['id']; ?>" class="badge text-bg-primary float-end m-lg-1">Details</a>
           </li>
@@ -45,11 +45,11 @@
   </div>
 </div>
 
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabelGuru" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Guru</h1>
+        <h1 class="modal-title fs-5" id="formModalLabelGuru">Tambah Data Guru</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -57,7 +57,7 @@
           <input type="hidden" name="id" id="id">
           <div class="form-group">
             <label for="nama">Nama</label>
-            <input type="nama" class="form-control" id="nama" name="guru">
+            <input type="text" class="form-control" id="guru" name="guru">
           </div>
 
 

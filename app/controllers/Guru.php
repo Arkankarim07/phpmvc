@@ -66,7 +66,7 @@ class Guru extends Controller
   public function cari()
   {
     $data['judul'] = "Daftar guru";
-    $data['siswa'] = $this->model('Guru_model')->cariDataMahasiswa();
+    $data['guru'] = $this->model('Guru_model')->cariDataMahasiswa();
     $this->view('templates/header', $data);
     $this->view('guru/index', $data);
     $this->view('templates/footer');

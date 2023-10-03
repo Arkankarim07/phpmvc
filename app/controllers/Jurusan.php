@@ -22,6 +22,24 @@
     }
   }
 
+  public function getubah()
+  {
+    echo json_encode($this->model('Jurusan_model')->getMahasiswaById($_POST['id']));
+  }
+
+  public function ubah()
+  {
+    if ($this->model('Jurusan_model')->ubahDataMahasiswa($_POST) > 0) {
+      Flasher::setFlash('berhasil ', 'diubah', 'success');
+      header('Location: ' . BASEURL . '/jurusan');
+      exit;
+    } else {
+      Flasher::setFlash('gagal ', 'diubah', 'danger');
+      header('Location: ' . BASEURL . '/jurusan');
+      exit;
+    }
+  }
+
   public function hapus($id)
   {
     if ($this->model('Jurusan_model')->hapusDataMahasiswa($id) > 0) {

@@ -23,6 +23,17 @@ class Jurusan_model
     return $this->db->single();
   }
 
+  public function tambahDataMahasiswa($data)
+  {
+    $query = "INSERT INTO t_jurusan VALUES('', :jurusan)";
+
+    $this->db->query($query);
+    $this->db->bind('jurusan', $data['jurusan']);
+
+    $this->db->execute();
+    return $this->db->rowCount();
+  }
+
 
   public function hapusDataMahasiswa($id)
   {
